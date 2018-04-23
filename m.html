@@ -1,0 +1,45 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <title>Test</title>
+    <style>
+        html, body{
+            height: 100%;
+        }
+        
+        .min-h{
+            height: 100%;
+        }
+        #wrap{
+            flex-direction: column;
+        }
+        .display-4{
+          font-size: 2.7rem
+        }
+    </style>
+</head>
+
+<body>
+  <div class="bg-secondary text-center d-flex h-100 align-items-center">
+    <div class="container">
+      <h1 class="display-4 text-white">N: Saturday July 8, 2017</p>
+      <p class="lead text-white">It's been <span id="dateDiff"></span> days since N!</p>
+    </div>
+  </div>
+<script>
+	var today = new Date();
+  var n = new Date("2017","07","08");
+  var timeDiff = today - n;
+  dateDiff.innerHTML = timeDiff;
+</script>
+<!--
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>
+-->
+</body>
+
+</html>
