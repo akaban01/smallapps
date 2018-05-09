@@ -1,41 +1,68 @@
 <html>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <title>Test</title>
-    <style>
-        html, body{
-            height: 100%;
-        }
-        
-        .min-h{
-            height: 100%;
-        }
-        #wrap{
-            flex-direction: column;
-        }
-        .display-4{
-          font-size: 2.7rem
-        }
-    </style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <title>A and F</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    .min-h {
+      height: 100%;
+    }
+
+    #wrap {
+      flex-direction: column;
+    }
+
+    .display-4 {
+      font-size: 2rem
+    }
+  </style>
 </head>
 
 <body>
-  <div class="bg-secondary text-center d-flex h-100 align-items-center">
+  <div class="text-center d-flex h-100 align-items-center" style="background: #e60000">
     <div class="container">
       <h1 class="display-4 text-white">N: Saturday July 8, 2017</p>
-      <p class="lead text-white">It's been <span id="dateDiff"></span> days since N!</p>
+        <p class="lead text-white">It's been
+          <span id="n_years"></span>
+          <span id="n_months"></span>
+          <span id="n_days"></span>since N!</p>
     </div>
   </div>
-<script>
-	var today = new Date();
-  var n = new Date("2017","07","08");
-  var timeDiff = today - n;
-  dateDiff.innerHTML = timeDiff;
-</script>
-<!--
+  <div class="text-center d-flex h-100 align-items-center" style="background: #86b300">
+    <div class="container">
+      <h1 class="display-4 text-white">V: Sunday January 28, 2018</p>
+        <p class="lead text-white">It's been
+          <span id="v_years"></span>
+          <span id="v_months"></span>
+          <span id="v_days"></span>since V!</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+  <script>
+    var today = new Date();
+    var n_date = new Date("2017", "07", "07"); /*actual new Date("2017","07","08") but momemnt js is always off by 1 day*/
+    const n_dur_mili = today - n_date;
+
+    n_years.innerHTML = moment.duration(n_dur_mili).years() + " year(s) ";
+    n_months.innerHTML = moment.duration(n_dur_mili).months() + " month(s) ";
+    n_days.innerHTML = moment.duration(n_dur_mili).days() + " day(s) ";
+
+    var v_date = new Date("2018", "01", "27"); /*actual new Date("2018","01","28") but momemnt js is always off by 1 day*/
+    const v_dur_mili = today - v_date;
+
+    v_years.innerHTML = moment.duration(v_dur_mili).years() + " year(s) ";
+    v_months.innerHTML = moment.duration(v_dur_mili).months() + " month(s) ";
+    v_days.innerHTML = moment.duration(v_dur_mili).days() + " day(s) ";
+
+  </script>
+  <!--
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
   <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>
